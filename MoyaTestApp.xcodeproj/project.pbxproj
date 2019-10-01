@@ -3,27 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32F48D0B33FF98AABE4B33B1 /* Pods_MoyaTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67430CC7E802938C10E7BC3 /* Pods_MoyaTestApp.framework */; };
+		5529AB2923432E1A00335956 /* MoyaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB2823432E1A00335956 /* MoyaService.swift */; };
+		5529AB2E234357CD00335956 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB2D234357CD00335956 /* NetworkManager.swift */; };
+		5529AB3123436E8400335956 /* NetworkManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3023436E8400335956 /* NetworkManagerDelegate.swift */; };
+		5529AB332343764600335956 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB322343764600335956 /* ViewModelDelegate.swift */; };
+		5529AB3523437AE000335956 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3423437AE000335956 /* PostsViewController.swift */; };
+		5529AB3723437C6900335956 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3623437C6900335956 /* PostsViewModel.swift */; };
+		5529AB3A2343801600335956 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB392343801600335956 /* Post.swift */; };
+		5529AB3C23438BD700335956 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3B23438BD700335956 /* Comment.swift */; };
+		5529AB3E23438E7C00335956 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3D23438E7C00335956 /* CommentsViewModel.swift */; };
+		5529AB4023438F7400335956 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3F23438F7400335956 /* CommentsViewController.swift */; };
 		558E8170234241760089A66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E816F234241760089A66C /* AppDelegate.swift */; };
 		558E8172234241760089A66C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E8171234241760089A66C /* SceneDelegate.swift */; };
-		558E8174234241760089A66C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E8173234241760089A66C /* ViewController.swift */; };
 		558E8177234241760089A66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558E8175234241760089A66C /* Main.storyboard */; };
 		558E8179234241770089A66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558E8178234241770089A66C /* Assets.xcassets */; };
 		558E817C234241770089A66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558E817A234241770089A66C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46BC21CA59E79CA6D704CBD2 /* Pods-MoyaTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoyaTestApp.debug.xcconfig"; path = "Target Support Files/Pods-MoyaTestApp/Pods-MoyaTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5529AB2823432E1A00335956 /* MoyaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaService.swift; sourceTree = "<group>"; };
+		5529AB2D234357CD00335956 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5529AB3023436E8400335956 /* NetworkManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDelegate.swift; sourceTree = "<group>"; };
+		5529AB322343764600335956 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelegate.swift; sourceTree = "<group>"; };
+		5529AB3423437AE000335956 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		5529AB3623437C6900335956 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		5529AB392343801600335956 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5529AB3B23438BD700335956 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		5529AB3D23438E7C00335956 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		5529AB3F23438F7400335956 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		558E816C234241760089A66C /* MoyaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoyaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558E816F234241760089A66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558E8171234241760089A66C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		558E8173234241760089A66C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		558E8176234241760089A66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		558E8178234241770089A66C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		558E817B234241770089A66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		558E817D234241770089A66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CE0AA65EC51A2E967B326C3 /* Pods-MoyaTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoyaTestApp.release.xcconfig"; path = "Target Support Files/Pods-MoyaTestApp/Pods-MoyaTestApp.release.xcconfig"; sourceTree = "<group>"; };
+		E67430CC7E802938C10E7BC3 /* Pods_MoyaTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoyaTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +53,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F48D0B33FF98AABE4B33B1 /* Pods_MoyaTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5529AB2723432DB400335956 /* MoyaService */ = {
+			isa = PBXGroup;
+			children = (
+				5529AB2823432E1A00335956 /* MoyaService.swift */,
+			);
+			path = MoyaService;
+			sourceTree = "<group>";
+		};
+		5529AB2A2343455500335956 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5529AB3423437AE000335956 /* PostsViewController.swift */,
+				5529AB3F23438F7400335956 /* CommentsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5529AB2B2343457200335956 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5529AB3623437C6900335956 /* PostsViewModel.swift */,
+				5529AB3D23438E7C00335956 /* CommentsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5529AB2C2343579700335956 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5529AB2D234357CD00335956 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5529AB2F23435EFD00335956 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5529AB3023436E8400335956 /* NetworkManagerDelegate.swift */,
+				5529AB322343764600335956 /* ViewModelDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5529AB3823437FFF00335956 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				5529AB392343801600335956 /* Post.swift */,
+				5529AB3B23438BD700335956 /* Comment.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
 		558E8163234241760089A66C = {
 			isa = PBXGroup;
 			children = (
 				558E816E234241760089A66C /* MoyaTestApp */,
 				558E816D234241760089A66C /* Products */,
+				8B49EEB4A7095A62300F6C15 /* Pods */,
+				60AB0EE582589BD7BE0F4548 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +133,37 @@
 		558E816E234241760089A66C /* MoyaTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				5529AB3823437FFF00335956 /* Struct */,
+				5529AB2F23435EFD00335956 /* Protocols */,
+				5529AB2C2343579700335956 /* Networking */,
+				5529AB2B2343457200335956 /* ViewModels */,
+				5529AB2A2343455500335956 /* ViewControllers */,
+				5529AB2723432DB400335956 /* MoyaService */,
 				558E816F234241760089A66C /* AppDelegate.swift */,
 				558E8171234241760089A66C /* SceneDelegate.swift */,
-				558E8173234241760089A66C /* ViewController.swift */,
 				558E8175234241760089A66C /* Main.storyboard */,
 				558E8178234241770089A66C /* Assets.xcassets */,
 				558E817A234241770089A66C /* LaunchScreen.storyboard */,
 				558E817D234241770089A66C /* Info.plist */,
 			);
 			path = MoyaTestApp;
+			sourceTree = "<group>";
+		};
+		60AB0EE582589BD7BE0F4548 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E67430CC7E802938C10E7BC3 /* Pods_MoyaTestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B49EEB4A7095A62300F6C15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46BC21CA59E79CA6D704CBD2 /* Pods-MoyaTestApp.debug.xcconfig */,
+				7CE0AA65EC51A2E967B326C3 /* Pods-MoyaTestApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 558E8180234241770089A66C /* Build configuration list for PBXNativeTarget "MoyaTestApp" */;
 			buildPhases = (
+				CAC445C384D19F2D99A94070 /* [CP] Check Pods Manifest.lock */,
 				558E8168234241760089A66C /* Sources */,
 				558E8169234241760089A66C /* Frameworks */,
 				558E816A234241760089A66C /* Resources */,
+				9704CE516EF5AF1DF626527D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +234,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9704CE516EF5AF1DF626527D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoyaTestApp/Pods-MoyaTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoyaTestApp/Pods-MoyaTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoyaTestApp/Pods-MoyaTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAC445C384D19F2D99A94070 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoyaTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		558E8168234241760089A66C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				558E8174234241760089A66C /* ViewController.swift in Sources */,
+				5529AB3523437AE000335956 /* PostsViewController.swift in Sources */,
 				558E8170234241760089A66C /* AppDelegate.swift in Sources */,
 				558E8172234241760089A66C /* SceneDelegate.swift in Sources */,
+				5529AB332343764600335956 /* ViewModelDelegate.swift in Sources */,
+				5529AB3723437C6900335956 /* PostsViewModel.swift in Sources */,
+				5529AB3C23438BD700335956 /* Comment.swift in Sources */,
+				5529AB2E234357CD00335956 /* NetworkManager.swift in Sources */,
+				5529AB3E23438E7C00335956 /* CommentsViewModel.swift in Sources */,
+				5529AB4023438F7400335956 /* CommentsViewController.swift in Sources */,
+				5529AB2923432E1A00335956 /* MoyaService.swift in Sources */,
+				5529AB3A2343801600335956 /* Post.swift in Sources */,
+				5529AB3123436E8400335956 /* NetworkManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +434,7 @@
 		};
 		558E8181234241770089A66C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46BC21CA59E79CA6D704CBD2 /* Pods-MoyaTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +453,7 @@
 		};
 		558E8182234241770089A66C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CE0AA65EC51A2E967B326C3 /* Pods-MoyaTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
