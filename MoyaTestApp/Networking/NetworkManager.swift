@@ -12,6 +12,8 @@ import Moya
 class NetworkManager {
     let provider = MoyaProvider<MoyaService>()
     
+    
+    
     weak var delegate: NetworkManagerDelegate?
     
     func sendRequest(endpoint: MoyaService) {
@@ -26,10 +28,25 @@ class NetworkManager {
         }
     }
     
-    func getComments() {
-        provider.request(.comments) { [delegate] result in
-            
-            
+    
+    
+    private func decodeData<T: Codable>(data: Data, to structure: T.Type) -> T {
+        guard let decodedData = try? JSONDecoder().decode(structure.self, from: data) else {
+            print("Something gone wrong while decoding...")
+            return structure as! T // Это ДИЧАЙШИЙ костыль! Надо исправить
+        }
+        return decodedData
+    }
+    
+    func getComments<T: Codable>(to structure: T.Type, completion: @escaping (T) -> Void) {
+        provider.request(.comments) { [weak self] result in
+            guard let self = self else { return }
+             switch result {
+             case .success(let response):
+                completion(self.decodeData(data: response.data, to: structure))
+             case .failure(let error):
+                 print(error.errorDescription ?? "Something gone wrong...")
+             }
         }
     }
 }

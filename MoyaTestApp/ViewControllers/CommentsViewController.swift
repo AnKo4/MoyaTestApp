@@ -17,7 +17,11 @@ class CommentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.delegate = self
+//        viewModel.delegate = self
+        viewModel.configure() { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
         setupTable()
     }
     
@@ -36,7 +40,7 @@ extension CommentsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
-        cell.textLabel?.text = "\(viewModel.data[indexPath.row].id). \(viewModel.data[indexPath.row].body)"
+        cell.textLabel?.text = "\(viewModel.data[indexPath.row].id). \(viewModel.data[indexPath.row].email)"
         return cell
     }
     
@@ -47,11 +51,10 @@ extension CommentsViewController: UITableViewDelegate {
     
 }
 
-extension CommentsViewController: ViewModelDelegate {
-    func refreshScreen() {
-        tableView.reloadData()
-    }
-    
-    
-}
+//extension CommentsViewController: ViewModelDelegate {
+//    func refreshScreen() {
+//        tableView.reloadData()
+//    }
+//
+//}
 
