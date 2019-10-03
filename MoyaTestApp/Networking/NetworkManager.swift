@@ -80,4 +80,16 @@ class NetworkManager {
         
     }
     
+    
+    func deletePost(id: Int, completion: @escaping (String) -> Void) {
+        provider.request(.deletePost(id: id)) { result in
+            switch result {
+            case .success(let response):
+                completion(response.description)
+            case .failure(let error):
+                print(error.errorDescription ?? "Something gone wrong...")
+            }
+        }
+    }
+    
 }
