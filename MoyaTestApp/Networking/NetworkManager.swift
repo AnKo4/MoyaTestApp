@@ -38,12 +38,12 @@ class NetworkManager {
         return decodedData
     }
     
-    func getComments<T: Codable>(to structure: T.Type, completion: @escaping (T) -> Void) {
+    func getComments(completion: @escaping ([Comment]) -> Void) {
         provider.request(.comments) { [weak self] result in
             guard let self = self else { return }
              switch result {
              case .success(let response):
-                guard let decodedData = self.decodeData(data: response.data, to: structure) else { return }
+                guard let decodedData = self.decodeData(data: response.data, to: [Comment].self) else { return }
                 completion(decodedData)
              case .failure(let error):
                  print(error.errorDescription ?? "Something gone wrong...")
@@ -53,7 +53,8 @@ class NetworkManager {
     
     
     func createPost(title: String, body: String, userId: Int, completion: @escaping (String, Post) -> Void) {
-        provider.request(.createPost(title: title, body: body, userId: userId)) { result in
+        provider.request(.createPost(title: title, body: body, userId: userId)) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let response):
                 guard let decodedResponse = self.decodeData(data: response.data, to: Post.self) else { return }
@@ -63,4 +64,20 @@ class NetworkManager {
             }
         }
     }
+    
+    
+    func patchPost(id: Int, title: String?, body: String?, userId: Int?, completion: @escaping (String, Post) -> Void) {
+        provider.request(.patchPost(id: id, title: title, body: body, userId: userId)) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                guard let decodedResponse = self.decodeData(data: response.data, to: Post.self) else { return }
+                completion(response.description, decodedResponse)
+            case .failure(let error):
+                print(error.errorDescription ?? "Something gone wrong...")
+            }
+        }
+        
+    }
+    
 }

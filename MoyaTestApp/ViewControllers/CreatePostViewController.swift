@@ -18,10 +18,6 @@ class CreatePostViewController: UIViewController {
     
     let networkManager = NetworkManager()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction private func buttonTapped(_ sender: UIButton) {
         let title = titleTextField.text ?? "Title"
         let body = bodyTextField.text ?? "Body"

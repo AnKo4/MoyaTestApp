@@ -19,6 +19,7 @@
 		5529AB3E23438E7C00335956 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3D23438E7C00335956 /* CommentsViewModel.swift */; };
 		5529AB4023438F7400335956 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529AB3F23438F7400335956 /* CommentsViewController.swift */; };
 		5540FA252345DE0B00748D79 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5540FA242345DE0B00748D79 /* CreatePostViewController.swift */; };
+		5540FA27234618A600748D79 /* PatchPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5540FA26234618A600748D79 /* PatchPostViewController.swift */; };
 		558E8170234241760089A66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E816F234241760089A66C /* AppDelegate.swift */; };
 		558E8172234241760089A66C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E8171234241760089A66C /* SceneDelegate.swift */; };
 		558E8177234241760089A66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558E8175234241760089A66C /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		5529AB3D23438E7C00335956 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
 		5529AB3F23438F7400335956 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		5540FA242345DE0B00748D79 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		5540FA26234618A600748D79 /* PatchPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchPostViewController.swift; sourceTree = "<group>"; };
 		558E816C234241760089A66C /* MoyaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoyaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558E816F234241760089A66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558E8171234241760089A66C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				5529AB3423437AE000335956 /* PostsViewController.swift */,
 				5529AB3F23438F7400335956 /* CommentsViewController.swift */,
 				5540FA242345DE0B00748D79 /* CreatePostViewController.swift */,
+				5540FA26234618A600748D79 /* PatchPostViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				5529AB2923432E1A00335956 /* MoyaService.swift in Sources */,
 				5529AB3A2343801600335956 /* Post.swift in Sources */,
 				5529AB3123436E8400335956 /* NetworkManagerDelegate.swift in Sources */,
+				5540FA27234618A600748D79 /* PatchPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

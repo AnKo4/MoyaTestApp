@@ -16,6 +16,7 @@ enum MoyaService {
     case postsByUserID(id: Int)
     case commentsByPostID(id: Int)
     case createPost(title: String, body: String, userId: Int)
+    case patchPost(id: Int, title: String?, body: String?, userId: Int?)
 }
 
 extension MoyaService: TargetType {
@@ -29,7 +30,7 @@ extension MoyaService: TargetType {
             return "/posts"
         case .comments:
             return "/comments"
-        case .postByID(let id):
+        case .postByID(let id), .patchPost(let id, _, _, _):
             return "/posts/\(id)"
         case .postsByUserID(let id):
             return "/posts?userId=\(id)"
@@ -44,6 +45,8 @@ extension MoyaService: TargetType {
             return .get
         case .createPost:
             return .post
+        case .patchPost:
+            return .patch
         }
     }
     
@@ -57,6 +60,13 @@ extension MoyaService: TargetType {
             return .requestPlain
         case .createPost(let title, let body, let userId):
             return .requestParameters(parameters: ["title": title, "body": body, "userId": userId], encoding: JSONEncoding.default)
+        case .patchPost(let id, let title, let body, let userId):
+            var parameters = [String: Any]()
+            parameters["id"] = id
+            if title != nil { parameters["title"] = title }
+            if body != nil { parameters["body"] = body }
+            if userId != nil { parameters["userId"] = userId }
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

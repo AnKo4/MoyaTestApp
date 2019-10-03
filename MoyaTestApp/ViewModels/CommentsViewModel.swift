@@ -17,7 +17,7 @@ class CommentsViewModel {
     
     func configure(completion: @escaping () -> Void) {
         self.data = []
-        networkManager.getComments(to: [Comment].self) { [weak self] result in
+        networkManager.getComments() { [weak self] result in
             guard let self = self else { return }
             self.data = result
             completion()
