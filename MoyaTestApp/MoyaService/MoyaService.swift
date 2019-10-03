@@ -15,6 +15,7 @@ enum MoyaService {
     case postByID(id: Int)
     case postsByUserID(id: Int)
     case commentsByPostID(id: Int)
+    case createPost(title: String, body: String, userId: Int)
 }
 
 extension MoyaService: TargetType {
@@ -24,7 +25,7 @@ extension MoyaService: TargetType {
     
     var path: String {
         switch self {
-        case .posts:
+        case .posts, .createPost:
             return "/posts"
         case .comments:
             return "/comments"
@@ -41,6 +42,8 @@ extension MoyaService: TargetType {
         switch self {
         case .posts, .comments, .postByID, .postsByUserID, .commentsByPostID:
             return .get
+        case .createPost:
+            return .post
         }
     }
     
@@ -51,7 +54,9 @@ extension MoyaService: TargetType {
     var task: Task {
         switch self {
         case .posts, .comments, .postByID, .postsByUserID, .commentsByPostID:
-        return .requestPlain
+            return .requestPlain
+        case .createPost(let title, let body, let userId):
+            return .requestParameters(parameters: ["title": title, "body": body, "userId": userId], encoding: JSONEncoding.default)
         }
     }
     

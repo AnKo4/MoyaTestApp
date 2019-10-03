@@ -17,27 +17,10 @@ class CommentsViewModel {
     
     func configure(completion: @escaping () -> Void) {
         self.data = []
-  //      self.networkManager = NetworkManager()
-  //      self.networkManager.delegate = self
-  //      networkManager.sendRequest(endpoint: .comments)
         networkManager.getComments(to: [Comment].self) { [weak self] result in
             guard let self = self else { return }
             self.data = result
             completion()
- //           self.delegate?.refreshScreen()
         }
     }
 }
-
-//extension CommentsViewModel: NetworkManagerDelegate {
-//
-//    func gotResponse(data: Data) {
-//        guard let comments = try? JSONDecoder().decode([Comment].self, from: data) else {
-//            print("Something gone wrong while decoding...")
-//            return
-//        }
-//        self.data = comments
-//        delegate?.refreshScreen()
-//    }
-//}
-

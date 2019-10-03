@@ -10,13 +10,13 @@ import Foundation
 import Moya
 
 class NetworkManager {
+    
     let provider = MoyaProvider<MoyaService>()
-    
-    
     
     weak var delegate: NetworkManagerDelegate?
     
     func sendRequest(endpoint: MoyaService) {
+
         provider.request(endpoint) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -30,10 +30,10 @@ class NetworkManager {
     
     
     
-    private func decodeData<T: Codable>(data: Data, to structure: T.Type) -> T {
+    private func decodeData<T: Codable>(data: Data, to structure: T.Type) -> T? {
         guard let decodedData = try? JSONDecoder().decode(structure.self, from: data) else {
             print("Something gone wrong while decoding...")
-            return structure as! T // Это ДИЧАЙШИЙ костыль! Надо исправить
+            return nil
         }
         return decodedData
     }
@@ -43,10 +43,24 @@ class NetworkManager {
             guard let self = self else { return }
              switch result {
              case .success(let response):
-                completion(self.decodeData(data: response.data, to: structure))
+                guard let decodedData = self.decodeData(data: response.data, to: structure) else { return }
+                completion(decodedData)
              case .failure(let error):
                  print(error.errorDescription ?? "Something gone wrong...")
              }
+        }
+    }
+    
+    
+    func createPost(title: String, body: String, userId: Int, completion: @escaping (String, Post) -> Void) {
+        provider.request(.createPost(title: title, body: body, userId: userId)) { result in
+            switch result {
+            case .success(let response):
+                guard let decodedResponse = self.decodeData(data: response.data, to: Post.self) else { return }
+                completion(response.description, decodedResponse)
+            case .failure(let error):
+                print(error.errorDescription ?? "Something gone wrong...")
+            }
         }
     }
 }

@@ -17,18 +17,16 @@ class CommentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        viewModel.delegate = self
+        setupTable()
         viewModel.configure() { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
         }
-        setupTable()
     }
     
     private func setupTable() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "commentCell")
         tableView.dataSource = self
-        tableView.delegate = self
     }
     
 }
@@ -46,15 +44,3 @@ extension CommentsViewController: UITableViewDataSource {
     
     
 }
-
-extension CommentsViewController: UITableViewDelegate {
-    
-}
-
-//extension CommentsViewController: ViewModelDelegate {
-//    func refreshScreen() {
-//        tableView.reloadData()
-//    }
-//
-//}
-
